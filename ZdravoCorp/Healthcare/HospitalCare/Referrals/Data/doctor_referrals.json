@@ -1,0 +1,32 @@
+[
+  {
+    "Id": 43882,
+    "PatientUsername": "milka2",
+    "DoctorUsername": "jhon5",
+    "IsUsed": false
+  },
+  {
+    "Id": 6675,
+    "PatientUsername": "milka",
+    "DoctorUsername": "ilija02",
+    "IsUsed": true
+  },
+  {
+    "Id": 80862,
+    "PatientUsername": "maric300",
+    "DoctorUsername": "jhon5",
+    "IsUsed": true
+  },
+  {
+    "Id": 9554,
+    "PatientUsername": "milka",
+    "DoctorUsername": "ilija03",
+    "IsUsed": false
+  },
+  {
+    "Id": 79807,
+    "PatientUsername": "maric301",
+    "DoctorUsername": "jhon5",
+    "IsUsed": false
+  }
+]

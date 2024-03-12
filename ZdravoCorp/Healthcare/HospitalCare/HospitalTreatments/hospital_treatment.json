@@ -1,0 +1,29 @@
+[
+  {
+    "Id": 93366,
+    "TreatmentBeginning": "2023-06-14T16:56:57.1840413+02:00",
+    "TreatmentEnding": "2023-06-14T22:00:32.5603498+02:00",
+    "Treatment": "Pij probiotik dva puta dnevno",
+    "PatientUsername": "maric300",
+    "RoomName": "Patient Room 1",
+    "Status": 1
+  },
+  {
+    "Id": 4524,
+    "TreatmentBeginning": "2023-06-14T16:57:19.7322397+02:00",
+    "TreatmentEnding": "2023-06-19T16:57:19.7322431+02:00",
+    "Treatment": "Infusion 3.",
+    "PatientUsername": "maric301",
+    "RoomName": "Patient Room 2",
+    "Status": 0
+  },
+  {
+    "Id": 46101,
+    "TreatmentBeginning": "2023-06-14T22:02:42.4586357+02:00",
+    "TreatmentEnding": "2023-06-19T22:02:42.4586412+02:00",
+    "Treatment": "Infusion 3.",
+    "PatientUsername": "milka",
+    "RoomName": "Patient Room 2",
+    "Status": 0
+  }
+]

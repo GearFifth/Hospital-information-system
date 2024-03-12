@@ -1,0 +1,28 @@
+[
+  {
+    "Id": 0,
+    "PatientUsername": "milka2",
+    "DrugName": "Lisinopril",
+    "Period": {
+      "Start": "2023-05-24T00:00:00",
+      "End": "2023-05-25T00:00:00"
+    },
+    "DailyDose": 3,
+    "consumeTime": 1,
+    "IsSentToExamination": true,
+    "NextDoseDate": "2023-05-24T18:08:33.2152798+02:00"
+  },
+  {
+    "Id": 75739,
+    "PatientUsername": "maric300",
+    "DrugName": "Lisinopril",
+    "Period": {
+      "Start": "2023-05-30T00:00:00",
+      "End": "2023-06-06T00:00:00"
+    },
+    "DailyDose": 2,
+    "consumeTime": 1,
+    "IsSentToExamination": false,
+    "NextDoseDate": "2023-06-03T18:23:11.1360401+02:00"
+  }
+]

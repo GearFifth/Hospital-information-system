@@ -1,0 +1,29 @@
+[
+  {
+    "Id": 99289,
+    "PatientUsername": "milka",
+    "QualityOfService": 4,
+    "Cleanness": 3,
+    "OverallSatisfaction": 4,
+    "RecommendHospital": 3,
+    "Comment": "Overall good quality."
+  },
+  {
+    "Id": 69062,
+    "PatientUsername": "maric300",
+    "QualityOfService": 1,
+    "Cleanness": 2,
+    "OverallSatisfaction": 3,
+    "RecommendHospital": 2,
+    "Comment": "Staff was pretty rude."
+  },
+  {
+    "Id": 46832,
+    "PatientUsername": "maric301",
+    "QualityOfService": 5,
+    "Cleanness": 4,
+    "OverallSatisfaction": 5,
+    "RecommendHospital": 5,
+    "Comment": "Best hospital! Would not visit again."
+  }
+]

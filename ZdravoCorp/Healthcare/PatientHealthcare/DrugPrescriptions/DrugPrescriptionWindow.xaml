@@ -1,0 +1,24 @@
+﻿<Window x:Class="ZdravoCorp.Healthcare.PatientHealthcare.DrugPrescriptions.DrugPrescriptionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="PrescribeDrugWindow" Height="483" Width="577" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Grid>
+        <Label Content="DRUG PRESCRIPTION" HorizontalAlignment="Center" Margin="0,33,0,0" VerticalAlignment="Top" FontSize="22" FontWeight="Bold"/>
+        <Label Content="Drug: " HorizontalAlignment="Left" Margin="189,108,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <ComboBox x:Name="drugComboBox" HorizontalAlignment="Left" Margin="247,108,0,0" VerticalAlignment="Top" Width="200" FontSize="16" Height="35" RenderTransformOrigin="0.519,1.28" SelectedIndex="0"/>
+        <Label Content="Start date: " HorizontalAlignment="Left" Margin="156,165,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <DatePicker x:Name="startDatePicker" HorizontalAlignment="Left" Margin="248,163,0,0" VerticalAlignment="Top" Width="200" Height="35" VerticalContentAlignment="Center" FontSize="16"/>
+        <Label Content="End date: " HorizontalAlignment="Left" Margin="161,221,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <DatePicker x:Name="endDatePicker" HorizontalAlignment="Left" Margin="248,219,0,0" VerticalAlignment="Top" Width="200" Height="35" VerticalContentAlignment="Center" FontSize="16"/>
+        <Label Content="Daily dosage: " HorizontalAlignment="Left" Margin="134,275,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <TextBox x:Name="dailyDosageTextBox" HorizontalAlignment="Left" Margin="248,271,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="35" FontSize="16"/>
+        <Label Content="Consume time: " HorizontalAlignment="Left" Margin="121,327,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <ComboBox x:Name="consumeTimeComboBox" HorizontalAlignment="Left" Margin="247,325,0,0" VerticalAlignment="Top" Width="200" FontSize="16" Height="35" RenderTransformOrigin="0.519,1.28" SelectedIndex="0"/>
+        <Button x:Name="addButton" Content="Add" HorizontalAlignment="Left" Margin="161,399,0,0" VerticalAlignment="Top" Width="100" Height="35" FontSize="18" Background="#FF4FB53A" Foreground="White" BorderBrush="#FF2D7918" Cursor="Hand" Click="addButton_Click"/>
+        <Button x:Name="cancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="305,399,0,0" VerticalAlignment="Top" Width="100" Height="35" FontSize="18" Background="#FFEA5454" Foreground="White" RenderTransformOrigin="2.185,0.629" Click="CancelButton_Click" Cursor="Hand"/>
+
+    </Grid>
+</Window>

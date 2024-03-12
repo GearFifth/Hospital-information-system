@@ -1,0 +1,18 @@
+﻿<Window x:Class="ZdravoCorp.PhysicalAsset.Rooms.Presentation.ScheduleSimpleRenovationDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Schedule Simple Renovation Dialog" Height="350" Width="400" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Content="Select new room type:" HorizontalAlignment="Left" Height="31" Margin="13,53,0,0" VerticalAlignment="Top" Width="128"/>
+        <ComboBox x:Name="RoomTypeComboBox" HorizontalAlignment="Left" Height="31" Margin="200,53,0,0" VerticalAlignment="Top" Width="176"/>
+        <Label Content="Select the start date:" HorizontalAlignment="Left" Height="29" Margin="13,125,0,0" VerticalAlignment="Top" Width="217"/>
+        <DatePicker x:Name="StartDatePicker" HorizontalAlignment="Left" Height="29" Margin="200,125,0,0" VerticalAlignment="Top" Width="176"/>
+        <Label Content="Select the end date:" HorizontalAlignment="Left" Height="29" Margin="13,178,0,0" VerticalAlignment="Top" Width="156"/>
+        <DatePicker x:Name="EndDatePicker" HorizontalAlignment="Left" Height="29" Margin="200,178,0,0" VerticalAlignment="Top" Width="176"/>
+        <Button x:Name="SubmitSimpleRenovationButton" Content="Submit" HorizontalAlignment="Left" Height="37" Margin="200,258,0,0" VerticalAlignment="Top" Width="176" Click="SubmitSimpleRenovationButton_Click"/>
+
+    </Grid>
+</Window>

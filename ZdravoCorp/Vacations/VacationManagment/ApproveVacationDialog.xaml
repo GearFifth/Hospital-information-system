@@ -1,0 +1,21 @@
+﻿<Window x:Class="ZdravoCorp.Vacations.VacationManagment.ApproveVacationDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Approve Vacation Dialog" Height="450" Width="400">
+    <Grid>
+        <Label Content="Doctor username:" HorizontalAlignment="Left" Height="29" Margin="38,50,0,0" VerticalAlignment="Top" Width="117"/>
+        <TextBox x:Name="DoctorUsernameTextBox" Text="{Binding VacationRequest.DoctorUsername}" HorizontalAlignment="Left" Height="29" Margin="186,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" IsEnabled="False"/>
+        <Label Content="Start:" HorizontalAlignment="Left" Height="32" Margin="38,101,0,0" VerticalAlignment="Top" Width="148"/>
+        <DatePicker HorizontalAlignment="Left" SelectedDate="{Binding VacationRequest.Period.Start}" Height="37" Margin="186,96,0,0" VerticalAlignment="Top" Width="161" IsTodayHighlighted="False" IsEnabled="False"/>
+        <Label Content="End:" HorizontalAlignment="Left" Height="35" Margin="38,154,0,0" VerticalAlignment="Top" Width="148"/>
+        <DatePicker HorizontalAlignment="Left" SelectedDate="{Binding VacationRequest.Period.End}" Height="35" Margin="186,154,0,0" VerticalAlignment="Top" Width="161" IsTodayHighlighted="False" IsEnabled="False"/>
+        <Label Content="Reason:" HorizontalAlignment="Left" Height="37" Margin="38,206,0,0" VerticalAlignment="Top" Width="148"/>
+        <TextBlock HorizontalAlignment="Left" Height="114" Margin="38,243,0,0" TextWrapping="Wrap" Text="{Binding VacationRequest.Reason}" VerticalAlignment="Top" Width="309"/>
+        <Button x:Name="ApproveButton" Command="{Binding ApproveRequestCommand}" Content="Approve" HorizontalAlignment="Left" Height="31" Margin="38,377,0,0" VerticalAlignment="Top" Width="134" Background="#FF43C04B" Foreground="White"/>
+        <Button x:Name="DenyButton" Content="Deny" Command="{Binding DenyRequestCommand}" HorizontalAlignment="Left" Height="31" Margin="216,377,0,0" VerticalAlignment="Top" Width="131" Foreground="White" Background="#FFE91D1D"/>
+
+    </Grid>
+</Window>

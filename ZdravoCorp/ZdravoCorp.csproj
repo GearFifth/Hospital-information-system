@@ -1,0 +1,98 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="MainUI\NotificationDialogs\Presentation\check.png" />
+    <None Remove="MainUI\NotificationDialogs\Presentation\error.png" />
+    <None Remove="MainUI\NotificationDialogs\Presentation\warning.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="MainUI\NotificationDialogs\Images\warning.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="MainUI\NotificationDialogs\Presentation\check.png" />
+    <Resource Include="MainUI\NotificationDialogs\Presentation\error.png" />
+    <Resource Include="MainUI\NotificationDialogs\Presentation\warning.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Scheduling\Appointments\Edit\DoctorEditAppointmentForm.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Scheduling\EmergencyAppointments\ChooseAppointmentDialog.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Scheduling\Appointments\Add\ReferralBookingWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Scheduling\EmergencyAppointments\EmergencyAppointmentWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Healthcare\Pharmacy\Selling\MedicationInventoryWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Healthcare\Pharmacy\Selling\SupplyingPrescribedMedicationWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Healthcare\HospitalCare\HospitalTreatments\View\HospitalTreatmentCheckInView.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Scheduling\Appointments\Edit\DoctorEditAppointmentForm.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainUI\NotificationDialogs\Presentation\WarningDialog.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Scheduling\EmergencyAppointments\ChooseAppointmentDialog.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Scheduling\Appointments\Add\ReferralBookingWindow.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Scheduling\EmergencyAppointments\EmergencyAppointmentWindow.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Healthcare\Pharmacy\Selling\MedicationInventoryWindow.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Healthcare\Roles\Patient\AddPatientProfileDialog.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Healthcare\Pharmacy\Selling\SupplyingPrescribedMedicationWindow.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.0" />
+    <PackageReference Include="FluentScheduler" Version="5.5.1" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="MainUI\NotificationDialogs\Images\check.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="MainUI\NotificationDialogs\Images\error.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

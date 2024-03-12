@@ -1,0 +1,34 @@
+[
+  {
+    "NumOfDays": 7,
+    "Therapy": "Pij probiotik jednom dnevno",
+    "AdditionalExaminations": "",
+    "Id": 623,
+    "PatientUsername": "maric300",
+    "IsUsed": false
+  },
+  {
+    "NumOfDays": 5,
+    "Therapy": "Infusion 1.",
+    "AdditionalExaminations": "",
+    "Id": 14961,
+    "PatientUsername": "maric301",
+    "IsUsed": false
+  },
+  {
+    "NumOfDays": 5,
+    "Therapy": "Infusion 3.",
+    "AdditionalExaminations": "",
+    "Id": 14962,
+    "PatientUsername": "milka",
+    "IsUsed": true
+  },
+  {
+    "NumOfDays": 5,
+    "Therapy": "Infusion 2.",
+    "AdditionalExaminations": "",
+    "Id": 14962,
+    "PatientUsername": "maric300",
+    "IsUsed": false
+  }
+]

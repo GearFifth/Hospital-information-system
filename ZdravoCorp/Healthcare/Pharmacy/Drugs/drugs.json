@@ -1,0 +1,220 @@
+[
+  {
+    "Name": "Aspirin",
+    "Ingredients": [
+      "Acetylsalicylic acid",
+      "Inert fillers"
+    ],
+    "NumberOfPills": 10,
+    "NumberOfPackages": 20
+  },
+  {
+    "Name": "Lisinopril",
+    "Ingredients": [
+      "Lisinopril dihydrate",
+      "Magnesium stearate",
+      "Mannitol",
+      "Corn starch"
+    ],
+    "NumberOfPills": 10,
+    "NumberOfPackages": 16
+  },
+  {
+    "Name": "Paracetamol",
+    "Ingredients": [
+      "Paracetamol",
+      "Povidone",
+      "Microcrystalline cellulose",
+      "Starch"
+    ],
+    "NumberOfPills": 10,
+    "NumberOfPackages": 20
+  },
+  {
+    "Name": "Omeprazole",
+    "Ingredients": [
+      "Omeprazole",
+      "Magnesium oxide",
+      "Hydroxypropyl cellulose",
+      "Crospovidone"
+    ],
+    "NumberOfPills": 10,
+    "NumberOfPackages": 20
+  },
+  {
+    "Name": "Simvastatin",
+    "Ingredients": [
+      "Simvastatin",
+      "Lactose monohydrate",
+      "Microcrystalline cellulose",
+      "Crospovidone"
+    ],
+    "NumberOfPills": 6,
+    "NumberOfPackages": 0
+  },
+  {
+    "Name": "Metformin",
+    "Ingredients": [
+      "Metformin hydrochloride",
+      "Povidone",
+      "Hypromellose",
+      "Magnesium stearate"
+    ],
+    "NumberOfPills": 9,
+    "NumberOfPackages": 4
+  },
+  {
+    "Name": "Atorvastatin",
+    "Ingredients": [
+      "Atorvastatin calcium",
+      "Lactose monohydrate",
+      "Microcrystalline cellulose",
+      "Croscarmellose sodium"
+    ],
+    "NumberOfPills": 10,
+    "NumberOfPackages": 7
+  },
+  {
+    "Name": "Prednisone",
+    "Ingredients": [
+      "Prednisone",
+      "Lactose monohydrate",
+      "Magnesium stearate",
+      "Starch"
+    ],
+    "NumberOfPills": 9,
+    "NumberOfPackages": 2
+  },
+  {
+    "Name": "Metoprolol",
+    "Ingredients": [
+      "Metoprolol tartrate",
+      "Microcrystalline cellulose",
+      "Croscarmellose sodium",
+      "Silicon dioxide"
+    ],
+    "NumberOfPills": 10,
+    "NumberOfPackages": 20
+  },
+  {
+    "Name": "Amlodipine",
+    "Ingredients": [
+      "Amlodipine besylate",
+      "Lactose monohydrate",
+      "Microcrystalline cellulose",
+      "Croscarmellose sodium"
+    ],
+    "NumberOfPills": 6,
+    "NumberOfPackages": 6
+  },
+  {
+    "Name": "Levothyroxine",
+    "Ingredients": [
+      "Levothyroxine sodium",
+      "Microcrystalline cellulose",
+      "Colloidal silicon dioxide",
+      "Magnesium stearate"
+    ],
+    "NumberOfPills": 6,
+    "NumberOfPackages": 8
+  },
+  {
+    "Name": "Amoxicillin",
+    "Ingredients": [
+      "Amoxicillin trihydrate",
+      "Microcrystalline cellulose",
+      "Crospovidone",
+      "Colloidal silicon dioxide"
+    ],
+    "NumberOfPills": 10,
+    "NumberOfPackages": 1
+  },
+  {
+    "Name": "Ciprofloxacin",
+    "Ingredients": [
+      "Ciprofloxacin hydrochloride",
+      "Microcrystalline cellulose",
+      "Croscarmellose sodium",
+      "Colloidal silicon dioxide"
+    ],
+    "NumberOfPills": 10,
+    "NumberOfPackages": 0
+  },
+  {
+    "Name": "Tramadol",
+    "Ingredients": [
+      "Tramadol hydrochloride",
+      "Microcrystalline cellulose",
+      "Sodium starch glycolate",
+      "Colloidal silicon dioxide"
+    ],
+    "NumberOfPills": 10,
+    "NumberOfPackages": 8
+  },
+  {
+    "Name": "Fluoxetine",
+    "Ingredients": [
+      "Fluoxetine hydrochloride",
+      "Lactose monohydrate",
+      "Microcrystalline cellulose",
+      "Colloidal silicon dioxide"
+    ],
+    "NumberOfPills": 10,
+    "NumberOfPackages": 4
+  },
+  {
+    "Name": "Metronidazole",
+    "Ingredients": [
+      "Metronidazole",
+      "Microcrystalline cellulose",
+      "Pregelatinized starch",
+      "Sodium starch glycolate"
+    ],
+    "NumberOfPills": 10,
+    "NumberOfPackages": 20
+  },
+  {
+    "Name": "Ibuprofen",
+    "Ingredients": [
+      "Ibuprofen",
+      "Croscarmellose sodium",
+      "Silicon dioxide",
+      "Magnesium stearate"
+    ],
+    "NumberOfPills": 10,
+    "NumberOfPackages": 20
+  },
+  {
+    "Name": "Diazepam",
+    "Ingredients": [
+      "Diazepam",
+      "Lactose monohydrate",
+      "Microcrystalline cellulose",
+      "Sodium starch glycolate"
+    ],
+    "NumberOfPills": 10,
+    "NumberOfPackages": 20
+  },
+  {
+    "Name": "Losartan",
+    "Ingredients": [
+      "Losartan potassium",
+      "Microcrystalline cellulose",
+      "Lactose monohydrate",
+      "Colloidal silicon dioxide"
+    ],
+    "NumberOfPills": 10,
+    "NumberOfPackages": 20
+  },
+  {
+    "Name": "Warfarin",
+    "Ingredients": [
+      "Warfarin sodium",
+      "Lactose monohydrate",
+      "Microcrystalline cellulose",
+      "Sodium starch glycolate"
+    ],
+    "NumberOfPills": 10,
+    "NumberOfPackages": 20
+  }
+]

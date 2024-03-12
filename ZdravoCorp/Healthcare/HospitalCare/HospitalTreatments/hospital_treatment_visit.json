@@ -1,0 +1,18 @@
+[
+  {
+    "HospitalTreatmentId": 87397,
+    "PatientUsername": "maric301",
+    "VisitDate": "2023-06-14T18:40:59.4365529+02:00",
+    "BloodPressure": 12,
+    "Temperature": 12,
+    "Symptoms": null
+  },
+  {
+    "HospitalTreatmentId": 87397,
+    "PatientUsername": "maric301",
+    "VisitDate": "2023-06-14T18:41:01.823886+02:00",
+    "BloodPressure": 12,
+    "Temperature": 12,
+    "Symptoms": null
+  }
+]

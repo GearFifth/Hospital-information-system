@@ -1,0 +1,51 @@
+[
+  {
+    "Id": 11537,
+    "Time": "2023-06-13T22:35:27.2184723+02:00",
+    "SenderUsername": "ilija02",
+    "ReceiverUsername": "ognjengligoric",
+    "Content": "test test test"
+  },
+  {
+    "Id": 68003,
+    "Time": "2023-06-13T22:35:41.5059741+02:00",
+    "SenderUsername": "ilija02",
+    "ReceiverUsername": "ilija03",
+    "Content": "its working"
+  },
+  {
+    "Id": 162,
+    "Time": "2023-06-13T22:40:45.4015235+02:00",
+    "SenderUsername": "ilija03",
+    "ReceiverUsername": "ilija02",
+    "Content": "tes of longer message"
+  },
+  {
+    "Id": 35232,
+    "Time": "2023-06-13T23:00:37.5907052+02:00",
+    "SenderUsername": "ilija03",
+    "ReceiverUsername": "ognjengligoric",
+    "Content": "Dont let ilija02 bring syringes home"
+  },
+  {
+    "Id": 45690,
+    "Time": "2023-06-14T13:55:28.2521728+02:00",
+    "SenderUsername": "ognjengligoric",
+    "ReceiverUsername": "ilija03",
+    "Content": "one syringe is missing"
+  },
+  {
+    "Id": 52810,
+    "Time": "2023-06-14T14:02:12.930781+02:00",
+    "SenderUsername": "ognjengligoric",
+    "ReceiverUsername": "ilija03",
+    "Content": "and a bottle of tren"
+  },
+  {
+    "Id": 60406,
+    "Time": "2023-06-14T21:54:26.0256404+02:00",
+    "SenderUsername": "ilija02",
+    "ReceiverUsername": "jhon5",
+    "Content": "a"
+  }
+]

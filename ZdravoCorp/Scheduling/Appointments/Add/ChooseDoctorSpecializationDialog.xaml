@@ -1,0 +1,24 @@
+﻿<Window x:Class="ZdravoCorp.Scheduling.Appointments.Add.ChooseDoctorSpecializationDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+        xmlns:doctor="clr-namespace:ZdravoCorp.Healthcare.Roles.Doctor"
+        mc:Ignorable="d"
+        Title="ChooseDoctorSpecializationDialog" Height="407" Width="589" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <ObjectDataProvider x:Key="DoctorSpecialization" MethodName="GetValues"
+                            ObjectType="{x:Type sys:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="doctor:DoctorSpecialization" />
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </Window.Resources>
+    <Grid Margin="0,0,10,-6">
+        <ComboBox x:Name="specializationComboBox" HorizontalAlignment="Center" ItemsSource="{Binding Source={StaticResource DoctorSpecialization}}"  SelectedItem="{x:Static doctor:DoctorSpecialization.Physician}" Margin="0,125,0,0" VerticalAlignment="Top" Width="224" Height="42" FontSize="20" HorizontalContentAlignment="Center"/>
+        <Label Content="Specialization:" HorizontalAlignment="Center" Margin="0,83,0,0" VerticalAlignment="Top" Width="189" FontSize="20" HorizontalContentAlignment="Center"/>
+        <Button x:Name="chooseSpecializationBtn" Content="Choose Specialization" HorizontalAlignment="Center" Height="32" Margin="0,281,0,0" VerticalAlignment="Top" Width="232" FontSize="14" Background="#FF3671D0" Foreground="White" FontWeight="Bold" Click="ChooseSpecializationBtn_Click"   />
+
+    </Grid>
+</Window>

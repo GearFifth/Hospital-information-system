@@ -1,0 +1,242 @@
+﻿<Window x:Class="ZdravoCorp.MainUI.UserWindows.ManagerView.ManagerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
+        mc:Ignorable="d"
+        x:Name="managerWindow"
+        Title="ManagerWindow" Height="500" Width="900" WindowStartupLocation="CenterScreen" Closed="Window_Closed">
+    <Grid Margin="0,0,0,-53">
+
+        <TabControl Margin="0,0,0,49">
+            <TabItem x:Name="InventoryOverviewTab" Header="Inventory Overview">
+                <Grid Background="#FFE5E5E5" Height="393" VerticalAlignment="Top">
+                    <DataGrid x:Name="InventoryDataGrid" HorizontalAlignment="Left" Height="288" Margin="48,61,0,0" VerticalAlignment="Top" Width="806"  CanUserAddRows="False" Loaded="InventoryDataGrid_Loaded" IsReadOnly="True" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Equipment Name" Binding="{Binding Equipment.Name}" />
+                            <DataGridTextColumn Header="Equipment Type" Binding="{Binding Equipment.Type}" />
+                            <DataGridTextColumn Header="Dynamic" Binding="{Binding Equipment.IsDynamic}" />
+                            <DataGridTextColumn Header="Room Name" Binding="{Binding Room.Name}" />
+                            <DataGridTextColumn Header="Room Type" Binding="{Binding Room.Type}" />
+                            <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" />
+                        </DataGrid.Columns>
+                        <DataGrid.CellStyle>
+                            <Style TargetType="{x:Type DataGridCell}">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Quantity}" Value="0">
+                                        <Setter Property="Background" Value="Red" />
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding Quantity}" Value="{x:Null}">
+                                        <Setter Property="Background" Value="Red" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </DataGrid.CellStyle>
+                    </DataGrid>
+                    <Button x:Name="FilterByRoomTypeButton" Content="Filter By Room Type" HorizontalAlignment="Left" Height="34" Margin="49,22,0,0" VerticalAlignment="Top" Width="127" Click="FilterByRoomTypeButton_Click"/>
+                    <Button x:Name="FilterByEquipmentTypeButton" Content="Filter By Equipment Type" HorizontalAlignment="Left" Margin="181,22,0,0" VerticalAlignment="Top" Height="34" Width="138" Click="FilterByEquipmentTypeButton_Click"/>
+                    <Button x:Name="FilterByQuantityButton" Content="Filter By Quantity" HorizontalAlignment="Left" Margin="324,23,0,0" VerticalAlignment="Top" Height="33" Width="142" IsCancel="True" Click="FilterByQuantityButton_Click"/>
+                    <Button x:Name="FilterNotInStorageButton" Content="Filter Not In Storage" HorizontalAlignment="Left" Height="33" Margin="470,23,0,0" VerticalAlignment="Top" Width="137" Click="FilterNotInStorageButton_Click"/>
+                    <TextBox x:Name="SearchBox" HorizontalAlignment="Left" Margin="618,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="114" Height="33" TextChanged="SearchBox_TextChanged"/>
+                    <Button x:Name="ResetFilterButton" Content="Reset Filters" HorizontalAlignment="Left" Height="29" Margin="740,25,0,0" VerticalAlignment="Top" Width="114" Background="#FFDA2525" Foreground="#FFFFF8F8" Click="ResetFilterButton_Click"/>
+                    <Button x:Name="TransferItemButton" Content="Transfer Item" HorizontalAlignment="Left" Height="39" Margin="49,354,0,0" VerticalAlignment="Top" Width="179" Click="TransferItemButton_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="OrdersTab" Header="Orders">
+                <TabControl Height="400" VerticalAlignment="Top">
+                    <TabItem x:Name="MissingInventoryOverviewTab" Header="Missing Inventory">
+                        <Grid Background="#FFE5E5E5" Height="350">
+                            <Grid HorizontalAlignment="Left" Height="350" Margin="-3,2,0,0" VerticalAlignment="Top" Width="897"/>
+
+                            <DataGrid x:Name="MissingInventoryDataGrid" HorizontalAlignment="Left" Height="270" VerticalAlignment="Top" Width="768" AutoGenerateColumns="False" Loaded="MissingInventoryDataGrid_Loaded" IsReadOnly="True" Margin="63,76,0,0" EnableRowVirtualization="False">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Equipment Name" Binding="{Binding Equipment.Name}" />
+                                    <DataGridTextColumn Header="Equipment Type" Binding="{Binding Equipment.Type}" />
+                                    <DataGridTextColumn Header="Dynamic" Binding="{Binding Equipment.IsDynamic}" />
+                                    <DataGridTextColumn Header="Room Name" Binding="{Binding Room.Name}" />
+                                    <DataGridTextColumn Header="Room Type" Binding="{Binding Room.Type}" />
+                                    <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" />
+                                </DataGrid.Columns>
+                                <DataGrid.CellStyle>
+                                    <Style TargetType="{x:Type DataGridCell}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Quantity}" Value="0">
+                                                <Setter Property="Background" Value="Red" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Quantity}" Value="{x:Null}">
+                                                <Setter Property="Background" Value="Red" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </DataGrid.CellStyle>
+                            </DataGrid>
+                            <Button x:Name="OrderMissingItemsButton" Content="Order Item" HorizontalAlignment="Left" Height="33" Margin="51,25,0,0" VerticalAlignment="Top" Width="143" Click="OrderMissingItemsButton_Click"/>
+                        </Grid>
+                    </TabItem>
+                    <TabItem x:Name="OrderOverviewTab" Header="Orders">
+                        <Grid Background="#FFE5E5E5" Height="350">
+                            <Grid HorizontalAlignment="Left" Height="350" Margin="-3,2,0,0" VerticalAlignment="Top" Width="897">
+                                <Button x:Name="RefreshOrdersButton" Content="Refresh Orders" HorizontalAlignment="Left" Margin="69,27,0,292" Width="131" Click="RefreshOrdersButton_Click"/>
+                            </Grid>
+                            <DataGrid x:Name="OrdersDataGrid" HorizontalAlignment="Left" Height="270" VerticalAlignment="Top" Width="768" Loaded="OrdersDataGrid_Loaded" AutoGenerateColumns="False" IsReadOnly="True" Margin="63,76,0,0">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Order Id" Binding="{Binding Id}" />
+                                    <DataGridTextColumn Header="Equipment Name" Binding="{Binding InventoryItem.Equipment.Name}" />
+                                    <DataGridTextColumn Header="Equipment Type" Binding="{Binding InventoryItem.Equipment.Type}" />
+                                    <DataGridTextColumn Header="Dynamic" Binding="{Binding InventoryItem.Equipment.IsDynamic}" />
+                                    <DataGridTextColumn Header="Room Name" Binding="{Binding InventoryItem.Room.Name}" />
+                                    <DataGridTextColumn Header="Room Type" Binding="{Binding InventoryItem.Room.Type}" />
+                                    <DataGridTextColumn Header="Quantity" Binding="{Binding InventoryItem.Quantity}" />
+                                    <DataGridTextColumn Header="Time" Binding="{Binding Time}" />
+                                    <DataGridTextColumn Header="Status" Binding="{Binding Status}" />
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                    </TabItem>
+                </TabControl>
+
+            </TabItem>
+            <TabItem x:Name="RoomsTab" Header="Rooms" Margin="-2,-2,-2,0">
+                <Grid Background="#FFE5E5E5">
+                    <TabControl>
+                        <TabItem x:Name="RoomsGridTab" Header="Rooms View">
+                            <Grid Background="#FFE5E5E5">
+                                <Grid HorizontalAlignment="Center" Height="344" VerticalAlignment="Top" Width="888" Loaded="RoomsDataGrid_Loaded">
+                                    <DataGrid x:Name="RoomsDataGrid" HorizontalAlignment="Left" Height="327" Margin="262,10,0,0" VerticalAlignment="Top" Width="589" AutoGenerateColumns="False" Loaded="RoomsDataGrid_Loaded" CanUserAddRows="False" CanUserDeleteRows="False">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+                                            <DataGridTextColumn Header="Type" Binding="{Binding Type}" />
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                    <Button x:Name="SimpleRenovationButton" Content="Schedule Simple Renovation" HorizontalAlignment="Left" Height="32" Margin="23,15,0,0" VerticalAlignment="Top" Width="192" Click="SimpleRenovationButton_Click"/>
+                                </Grid>
+                                <Button x:Name="SplitRoomRenovationButton" Content="Schedule Split Room Renovation" HorizontalAlignment="Left" Height="32" Margin="23,72,0,0" VerticalAlignment="Top" Width="192" Click="SplitRoomRenovationButton_Click"/>
+                                <Button x:Name="JoinRoomsRenovationButton" Content="Schedule Join Rooms Renovation" HorizontalAlignment="Left" Height="32" Margin="23,129,0,0" VerticalAlignment="Top" Width="192" Click="JoinRoomsRenovationButton_Click"/>
+                            </Grid>
+                        </TabItem>
+                        <TabItem x:Name="RenovationsTab" Header="Renovations">
+                            <Grid Background="#FFE5E5E5">
+                                <TabControl HorizontalAlignment="Left" Height="334" Margin="10,10,0,0" VerticalAlignment="Top" Width="855">
+                                    <TabItem x:Name="SimpleRenovations" Header="Simple Renovations" Height="22" Margin="-2,-2,-2,0" VerticalAlignment="Top">
+                                        <Grid Background="#FFE5E5E5">
+                                            <DataGrid x:Name="SimpleRenovationsDataGrid" HorizontalAlignment="Left" Height="246" Margin="23,17,0,0" VerticalAlignment="Top" Width="791" AutoGenerateColumns="False" Loaded="SimpleRenovationsDataGrid_OnLoaded" CanUserAddRows="False">
+                                                <DataGrid.Columns>
+                                                    <DataGridTextColumn Header="Room Name" Binding="{Binding RoomName }" />
+                                                    <DataGridTextColumn Header="New Room Type" Binding="{Binding RoomType}" />
+                                                    <DataGridTextColumn Header="Start" Binding="{Binding TimeSlot.Start}" />
+                                                    <DataGridTextColumn Header="End" Binding="{Binding TimeSlot.End}" />
+                                                    <DataGridTextColumn Header="Status" Binding="{Binding Status}" />
+                                                </DataGrid.Columns>
+                                            </DataGrid>
+                                        </Grid>
+                                    </TabItem>
+                                    <TabItem x:Name="SplitRoomRenovationsTab" Header="Split Room Renovations">
+                                        <Grid Background="#FFE5E5E5">
+                                            <DataGrid x:Name="SplitRoomRenovationsDataGrid" HorizontalAlignment="Left" Height="246" Margin="23,17,0,0" VerticalAlignment="Top" Width="791" AutoGenerateColumns="False" Loaded="SplitRoomRenovationsDataGrid_Loaded" CanUserAddRows="False">
+                                                <DataGrid.Columns>
+                                                    <DataGridTextColumn Header="Room Name" Binding="{Binding RoomName }" />
+                                                    <DataGridTextColumn Header="Start" Binding="{Binding TimeSlot.Start}" />
+                                                    <DataGridTextColumn Header="End" Binding="{Binding TimeSlot.End}" />
+                                                    <DataGridTextColumn Header="First Room Name" Binding="{Binding FirstRoomName}" />
+                                                    <DataGridTextColumn Header="First Room Type" Binding="{Binding RoomType}" />
+                                                    <DataGridTextColumn Header="Second Room Name" Binding="{Binding SecondRoomName}" />
+                                                    <DataGridTextColumn Header="Second Room Type" Binding="{Binding SecondRoomType}" />
+                                                    <DataGridTextColumn Header="Status" Binding="{Binding Status}" />
+                                                </DataGrid.Columns>
+                                            </DataGrid>
+                                        </Grid>
+                                    </TabItem>
+                                    <TabItem x:Name="JoinRoomsRenovationsTab" Header="Join Rooms Renovations">
+                                        <Grid Background="#FFE5E5E5">
+                                            <DataGrid x:Name="JoinRoomsRenovationsDataGrid" HorizontalAlignment="Left" Height="246" Margin="23,17,0,0" VerticalAlignment="Top" Width="791" AutoGenerateColumns="False" Loaded="JoinRoomsRenovationsDataGrid_Loaded" CanUserAddRows="False">
+                                                <DataGrid.Columns>
+                                                    <DataGridTextColumn Header="Room Name" Binding="{Binding RoomName }" />
+                                                    <DataGridTextColumn Header="Second Room Name" Binding="{Binding SecondRoomName}" />
+                                                    <DataGridTextColumn Header="Start" Binding="{Binding TimeSlot.Start}" />
+                                                    <DataGridTextColumn Header="End" Binding="{Binding TimeSlot.End}" />
+                                                    <DataGridTextColumn Header="New Room Name" Binding="{Binding NewRoomName}" />
+                                                    <DataGridTextColumn Header="New Room Type" Binding="{Binding RoomType}" />
+                                                    <DataGridTextColumn Header="Status" Binding="{Binding Status}" />
+                                                </DataGrid.Columns>
+                                            </DataGrid>
+                                        </Grid>
+                                    </TabItem>
+                                </TabControl>
+                            </Grid>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="Vacations" Header="Vacations" Height="20" VerticalAlignment="Top">
+                <Grid Height="350" Width="840" Margin="33,-50,21,0">
+                    <DataGrid x:Name="VacationDataGrid" Height="292" Width="797" SelectedItem="{Binding SelectedVacation}" ItemsSource="{Binding VacationRequests}" CanUserAddRows="False" AutoGenerateColumns="False" Margin="22,48,22,10">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Id" Binding="{Binding Id}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Doctor Username" Binding="{Binding DoctorUsername}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Start" Binding="{Binding Period.Start}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="End" Binding="{Binding Period.End}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Reason" Binding="{Binding Reason}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Status" Binding="{Binding Status}"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                        <b:Interaction.Triggers>
+                            <b:EventTrigger EventName="SelectionChanged">
+                                <b:InvokeCommandAction Command="{Binding EnableApproveVacationButtonCommand}" />
+                            </b:EventTrigger>
+                        </b:Interaction.Triggers>
+                    </DataGrid>
+                    <Button x:Name="ApproveVacationButton" IsEnabled="{Binding HasSelectedVacation}" CommandParameter="{x:Reference Name = managerWindow}" Command="{Binding ShowApproveVacationDialogCommand}" Content="Approve" HorizontalAlignment="Left" Height="38" Margin="19,5,0,0" VerticalAlignment="Top" Width="147"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="AnalyticsTab" Header="Analytics" Height="20" VerticalAlignment="Top">
+                <TabControl>
+                    <TabItem x:Name="HospitalAnalytics" Header="Hospital">
+                        <Grid Height="350" Width="840" Margin="33,-50,21,0">
+                            <DataGrid x:Name="HospitalSurveysDataGrid" Height="292" Width="797"  ItemsSource="{Binding HospitalSurveys}" CanUserAddRows="False" AutoGenerateColumns="False" Margin="22,48,22,10">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Id" Binding="{Binding Id}"></DataGridTextColumn>
+                                    <DataGridTextColumn Header="Patient Username" Binding="{Binding PatientUsername}"></DataGridTextColumn>
+                                    <DataGridTextColumn Header="Quality of Service" Binding="{Binding QualityOfService}"></DataGridTextColumn>
+                                    <DataGridTextColumn Header="Cleanliness" Binding="{Binding Cleanness}"></DataGridTextColumn>
+                                    <DataGridTextColumn Header="Overall Satisfaction" Binding="{Binding OverallSatisfaction}"></DataGridTextColumn>
+                                    <DataGridTextColumn Header="Recommend Hospital" Binding="{Binding RecommendHospital}"></DataGridTextColumn>
+                                    <DataGridTextColumn Header="Comment" Binding="{Binding Comment}"></DataGridTextColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                            <Button x:Name="HospitalStatisticsButton" CommandParameter="{x:Reference Name = managerWindow}" Command="{Binding ShowHospitalStaticsCommand}" Content="Statistics" HorizontalAlignment="Left" Height="37" Margin="25,6,0,0" VerticalAlignment="Top" Width="183"/>
+                        </Grid>
+                    </TabItem>
+                    <TabItem x:Name="DoctorsAnalytics" Header="Doctors">
+                        <Grid Height="350" Width="840" Margin="33,-50,21,0">
+                            <DataGrid x:Name="DoctorsSurveysDataGrid" Height="292" Width="797"  ItemsSource="{Binding DoctorsSurveys}" CanUserAddRows="False" AutoGenerateColumns="False" Margin="22,48,22,10">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Id" Binding="{Binding Id}"></DataGridTextColumn>
+                                    <DataGridTextColumn Header="Patient Username" Binding="{Binding PatientUsername}"></DataGridTextColumn>
+                                    <DataGridTextColumn Header="Quality of Service" Binding="{Binding QualityOfService}"></DataGridTextColumn>
+                                    <DataGridTextColumn Header="Overall Satisfaction" Binding="{Binding OverallSatisfaction}"></DataGridTextColumn>
+                                    <DataGridTextColumn Header="Recommend Doctor" Binding="{Binding RecommendDoctor}"></DataGridTextColumn>
+                                    <DataGridTextColumn Header="Comment" Binding="{Binding Comment}"></DataGridTextColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                            <ComboBox x:Name="DoctorsComboBox" ItemsSource="{Binding Doctors}" SelectedIndex="1"  SelectedItem="{Binding SelectedDoctor}" DisplayMemberPath="Username" HorizontalAlignment="Left" Height="34" Margin="22,9,0,0" VerticalAlignment="Top" Width="202" IsReadOnly="True">
+                                <b:Interaction.Triggers>
+                                    <b:EventTrigger EventName="SelectionChanged">
+                                        <b:InvokeCommandAction Command="{Binding SelectedDoctorChangedCommand}" />
+                                    </b:EventTrigger>
+                                </b:Interaction.Triggers>
+                            </ComboBox>
+                            <Button Content="Statistics" CommandParameter="{x:Reference Name = managerWindow}" Command="{Binding ShowDoctorStatisticsCommand}"  HorizontalAlignment="Left" Height="34" Margin="232,9,0,0" VerticalAlignment="Top" Width="158"/>
+                            <Button Content="Best Doctors" CommandParameter="{x:Reference Name = managerWindow}" Command="{Binding ShowBestDoctorsCommand}" HorizontalAlignment="Left" Height="34" Margin="456,9,0,0" VerticalAlignment="Top" Width="172"/>
+                            <Button Content="Worst Doctors" CommandParameter="{x:Reference Name = managerWindow}" Command="{Binding ShowWorstDoctorsCommand}" HorizontalAlignment="Left" Height="32" Margin="639,11,0,0" VerticalAlignment="Top" Width="180"/>
+                        </Grid>
+                    </TabItem>
+                </TabControl>
+            </TabItem>
+
+
+        </TabControl>
+        <Label x:Name="LoggedInLabel" Content="Logged in: " HorizontalAlignment="Left" Margin="20,418,0,0" VerticalAlignment="Top" Height="36" Width="208"/>
+        <Button x:Name="LogOutButton" Content="Log Out" HorizontalAlignment="Left" Height="26" Margin="741,418,0,0" VerticalAlignment="Top" Width="130" Background="#FFDD2626" Foreground="#FFFFFCFC" Click="LogOutButton_Click"/>
+
+    </Grid>
+</Window>

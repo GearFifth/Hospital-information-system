@@ -1,0 +1,17 @@
+﻿<Window x:Class="ZdravoCorp.Surveys.Analytics.DoctorRankings.BestDoctorsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZdravoCorp.Surveys.Analytics"
+        mc:Ignorable="d"
+        Title="Best Doctors Window" Height="300" Width="400">
+    <Grid>
+        <DataGrid HorizontalAlignment="Left" Height="168" Margin="37,60,0,0" VerticalAlignment="Top" Width="314" ItemsSource="{Binding DoctorRankings}" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Username" Binding="{Binding Username}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Ranking" Binding="{Binding Ranking}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

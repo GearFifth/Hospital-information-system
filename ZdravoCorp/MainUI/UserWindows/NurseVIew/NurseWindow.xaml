@@ -1,0 +1,65 @@
+﻿<Window x:Class="ZdravoCorp.MainUI.UserWindows.NurseVIew.NurseWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="NurseWindow" Height="524" Width="982" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label x:Name="loggedUsernameLabel" Content="USERNAME" HorizontalAlignment="Left" Margin="98,0,0,12" VerticalAlignment="Bottom" FontSize="14" Width="180"/>
+        <Label x:Name="loggedLabel" Content="Logged in:" HorizontalAlignment="Left" Margin="10,0,0,11" VerticalAlignment="Bottom" FontSize="14" Width="76"/>
+        <Button x:Name="logOutBtn" Content="Log out" HorizontalAlignment="Right" Height="32" Margin="0,0,31,9" VerticalAlignment="Bottom" Width="108" FontSize="14" Background="#FFEA5454" Foreground="White" FontWeight="Bold" BorderBrush="#FFF96363" Click="LogOutBtn_Click"/>
+        <TabControl Margin="0,0,0,52">
+            <TabItem Header="Main">
+                <Grid RenderTransformOrigin="0.498,0.515" Height="425" VerticalAlignment="Top">
+                    <Button x:Name="updatePatientBtn" Content="Update Patients" HorizontalAlignment="Left" Height="32" Margin="10,10,0,0" VerticalAlignment="Top" Width="170" FontSize="14" Background="#FF4FB53A" Foreground="White" FontWeight="Bold" Click="UpdatePatientBtn_Click"/>
+                    <Button x:Name="checkInPatientBtn" Content="Check In Patients" HorizontalAlignment="Left" Height="32" Margin="185,10,0,0" VerticalAlignment="Top" Width="170" FontSize="14" Background="#FF3671D0" Foreground="White" FontWeight="Bold" Click="CheckInPatientBtn_Click" />
+                    <Button x:Name="emergencyAppointmentBtn" Content="Emergency Appointment" HorizontalAlignment="Right" Height="32" Margin="0,10,31,0" VerticalAlignment="Top" Width="254" FontSize="14" Background="#FFEA5454" Foreground="White" BorderBrush="#FFF96363" FontWeight="Bold" Click="EmergencyAppointmentBtn_Click" />
+                    <Button x:Name="referralBookingBtn" Content="Referral Booking" HorizontalAlignment="Center" Height="32" Margin="0,94,0,0" VerticalAlignment="Top" Width="276" FontSize="14" Background="#FF3671D0" Foreground="White" FontWeight="Bold" Click="ReferralBookingBtn_Click" />
+                    <Button x:Name="drugPrescriptionBtn" Content="Drug prescription" HorizontalAlignment="Center" Height="32" Margin="0,146,0,0" VerticalAlignment="Top" Width="276" FontSize="14" Background="#FF3671D0" Foreground="White" FontWeight="Bold" Click="DrugPrescriptionBtn_Click" />
+                    <Button x:Name="hospitalTreatmentCheckInBtn" Content="Hospital Treatment Check In" HorizontalAlignment="Center" Height="32" VerticalAlignment="Top" Width="276" FontSize="14" Background="#FF3671D0" Foreground="White" FontWeight="Bold" Click="HospitalTreatmentCheckInBtn_Click" Margin="0,202,0,0"  />
+                    <Button x:Name="hospitalTreatmentVisitBtn" Content="Hospital Treatment Visit" HorizontalAlignment="Center" Height="32" VerticalAlignment="Top" Width="276" FontSize="14" Background="#FF3671D0" Foreground="White" FontWeight="Bold" Margin="0,258,0,0" Click="hospitalTreatmentVisitBtn_Click"  />
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="communicationTab" Header="Communication" FontSize="14" Height="25" VerticalAlignment="Top" Margin="0,-2,-2,0">
+                <Grid Background="#FFE5E5E5" Height="432">
+                    <DataGrid x:Name="sentMessagesDataGrid" ItemsSource="{Binding SentMessages}" ColumnWidth="*" CanUserAddRows="False" IsReadOnly="True" HorizontalAlignment="Left" VerticalAlignment="Top" Height="282" Width="478" Margin="5,47,0,0" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Time" Binding="{Binding Time}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Receiver username" Binding="{Binding ReceiverUsername}"></DataGridTextColumn>
+                            <DataGridTemplateColumn Header="Content">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <ScrollViewer VerticalScrollBarVisibility="Visible">
+                                            <TextBlock Text="{Binding Content}" TextWrapping="Wrap"/>
+                                        </ScrollViewer>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button x:Name="sendMessageButton" Command="{Binding SendMessageCommand}" Content="Send message" HorizontalAlignment="Left" Margin="456,0,0,50" VerticalAlignment="Bottom" Width="148" Height="35" FontSize="20" Background="#FF4FB53A" Foreground="White" Cursor="Hand"/>
+                    <TextBox x:Name="contentTextBox" HorizontalAlignment="Left" Margin="14,0,0,44" TextWrapping="Wrap" Text="" Width="272" Height="47" VerticalAlignment="Bottom"/>
+                    <ComboBox x:Name="workersComboBox" HorizontalAlignment="Left" Margin="300,0,0,55" VerticalAlignment="Bottom" Width="120"/>
+                    <DataGrid x:Name="receivedMessagesDataGrid" ItemsSource="{Binding ReceivedMessages}" ColumnWidth="*" CanUserAddRows="False" IsReadOnly="True" HorizontalAlignment="Right" VerticalAlignment="Top" Height="282" Width="467" Margin="0,47,5,0" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Time" Binding="{Binding Time}"/>
+                            <DataGridTextColumn Header="Sender username" Binding="{Binding SenderUsername}"/>
+                            <DataGridTemplateColumn Header="Content">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <ScrollViewer VerticalScrollBarVisibility="Visible">
+                                            <TextBlock Text="{Binding Content}" TextWrapping="Wrap"/>
+                                        </ScrollViewer>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Label Content="Sent messages" HorizontalAlignment="Left" Margin="172,18,0,0" VerticalAlignment="Top" FontSize="14" Width="144"/>
+                    <Label Content="Received messages" HorizontalAlignment="Right" Margin="0,18,175,0" VerticalAlignment="Top" FontSize="14" Width="127"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

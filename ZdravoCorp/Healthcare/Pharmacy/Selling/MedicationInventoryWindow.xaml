@@ -1,0 +1,46 @@
+﻿<Window x:Class="ZdravoCorp.Healthcare.Pharmacy.Selling.MedicationInventoryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MedicationInventoryWindow" Height="518" Width="1197" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+
+    <Grid Margin="0,0,10,13">
+        <Label x:Name="loggedUsernameLabel" Content="USERNAME" HorizontalAlignment="Left" Margin="106,405,0,0" VerticalAlignment="Top" FontSize="14" Width="135"/>
+        <Label x:Name="loggedLabel" Content="Logged in:" HorizontalAlignment="Left" Margin="16,405,0,0" VerticalAlignment="Top" FontSize="14" Width="84"/>
+        <Button x:Name="logOutBtn" Content="Log out" HorizontalAlignment="Left" Height="32" Margin="1057,398,0,0" VerticalAlignment="Top" Width="106" FontSize="14" Background="#FFEA5454" Foreground="White" FontWeight="Bold" BorderBrush="#FFF96363" Click="LogOutBtn_Click"/>
+        <DataGrid x:Name="medicineDataGrid" ColumnWidth="*" HorizontalAlignment="Left" Height="288" Margin="30,71,0,0" VerticalAlignment="Top" Width="564"  CanUserAddRows="False" Loaded="MedicineDataGrid_Loaded" IsReadOnly="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Drug Name" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Number Of Packages" Binding="{Binding NumberOfPackages}" />
+                <DataGridTextColumn Header="Number Of Pills per Package" Binding="{Binding NumberOfPills}" />
+
+
+            </DataGrid.Columns>
+            <DataGrid.CellStyle>
+                <Style TargetType="{x:Type DataGridCell}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding NumberOfPackages}" Value="0">
+                            <Setter Property="Background" Value="Red" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding NumberOfPackages}" Value="{x:Null}">
+                            <Setter Property="Background" Value="Red" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.CellStyle>
+        </DataGrid>
+        <Button x:Name="backBtn" Content="Back" HorizontalAlignment="Left" Height="32" Margin="1057,10,0,0" VerticalAlignment="Top" Width="106" FontSize="14" Background="#FFEA5454" Foreground="White" FontWeight="Bold" BorderBrush="#FFF96363" Click="BackBtn_Click" />
+        <DataGrid x:Name="orderDataGrid"  HorizontalAlignment="Left" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" Height="288" Margin="762,71,0,0" VerticalAlignment="Top" Width="401" >
+        </DataGrid>
+        <Button x:Name="addBtn" Content="Add" HorizontalAlignment="Left" Height="32" Margin="627,165,0,0" VerticalAlignment="Top" Width="106" FontSize="14" Background="#FFEA5454" Foreground="White" FontWeight="Bold" BorderBrush="#FFF96363" Click="AddBtn_Click" />
+        <Button x:Name="orderBtn" Content="Order" HorizontalAlignment="Left" Height="32" Margin="627,275,0,0" VerticalAlignment="Top" Width="106" FontSize="14" Background="#FFEA5454" Foreground="White" FontWeight="Bold" BorderBrush="#FFF96363" Click="OrderBtn_Click" />
+        <Label Content="Order: " HorizontalAlignment="Left" Margin="762,45,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="quantityTextBox" HorizontalAlignment="Left" Margin="627,228,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="106" Height="27" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16"/>
+        <Label Content="Quantity:" HorizontalAlignment="Left" Margin="627,202,0,0" VerticalAlignment="Top" Width="68"/>
+        <Button x:Name="removeBtn" Content="Remove" HorizontalAlignment="Left" Height="32" Margin="627,109,0,0" VerticalAlignment="Top" Width="106" FontSize="14" Background="#FFEA5454" Foreground="White" FontWeight="Bold" BorderBrush="#FFF96363" Click="RemoveBtn_Click"  />
+
+    </Grid>
+
+</Window>

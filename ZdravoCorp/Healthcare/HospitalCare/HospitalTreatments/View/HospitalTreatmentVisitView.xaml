@@ -1,0 +1,32 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZdravoCorp.Healthcare.HospitalCare.HospitalTreatments.View"
+        xmlns:b="http://schemas.microsoft.com/xaml/behaviors" x:Class="ZdravoCorp.Healthcare.HospitalCare.HospitalTreatments.View.HospitalTreatmentVisitView"
+        mc:Ignorable="d"
+        Title="HospitalTreatmentVisitView" Height="529" Width="815" WindowStartupLocation="CenterScreen">
+    <Grid>
+
+        <DataGrid x:Name="treatmentReferralsDataGrid" SelectedItem="{Binding SelectedHospitalTreatment}"  ItemsSource="{Binding HospitalTreatments}" AutoGenerateColumns="True"  CanUserAddRows="False" IsReadOnly="True" HorizontalAlignment="Left" Height="285" VerticalAlignment="Top" Width="500" RenderTransformOrigin="0.5,0.5" Margin="10,67,0,0">
+        </DataGrid>
+        <Label x:Name="loggedUsernameLabel_Copy" Content="{Binding LoggedUser}" HorizontalAlignment="Left" Margin="129,462,0,0" VerticalAlignment="Top" FontSize="14" Width="179" Height="34"/>
+        <Label x:Name="loggedLabel_Copy" Content="Logged in:" HorizontalAlignment="Left" Margin="48,466,0,0" VerticalAlignment="Top" FontSize="14" Width="76" RenderTransformOrigin="0.526,0.581" Height="38"/>
+        <Button x:Name="logOutBtn" Command="{Binding LogoutCommand}" Content="Log out" HorizontalAlignment="Left" Height="31" Margin="675,458,0,0" VerticalAlignment="Top" Width="108" FontSize="14" Background="#FFEA5454" Foreground="White" FontWeight="Bold" BorderBrush="#FFF96363"/>
+        <Label Content="Hospital treatments" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.541" Width="126"/>
+        <Label Content="Body temperature:" HorizontalAlignment="Left" Margin="530,128,0,0" VerticalAlignment="Top"/>
+        <Label Content="Blood pressure:" HorizontalAlignment="Left" Margin="530,182,0,0" VerticalAlignment="Top"/>
+        <Label Content="Symptoms:" HorizontalAlignment="Left" Margin="530,236,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.526,0.618"/>
+        <TextBox HorizontalAlignment="Left" Text="{Binding BodyTemperature}" Margin="530,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118">
+        </TextBox>
+        <TextBox HorizontalAlignment="Left" Text="{Binding BloodPressure}" Margin="530,213,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120">
+        </TextBox>
+        <TextBox HorizontalAlignment="Left" Text="{Binding Symptoms}" Height="85" Margin="530,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253"/>
+        <TextBox x:Name="filterTxt" HorizontalAlignment="Left" Text="{Binding FilterQuery}" Margin="259,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="32"/>
+        <Button x:Name="reportVisitBtn" Command="{Binding ReportVisitCommand}" Content="Report Visit" HorizontalAlignment="Left" Height="32" Margin="530,381,0,0" VerticalAlignment="Top" Width="126" FontSize="14" Background="#FF3671D0" Foreground="White" FontWeight="Bold" />
+        <Button x:Name="filterBtn" Command="{Binding FilterHospitalTreatmentsCommand}" CommandParameter="{x:Reference Name=filterTxt}" Content="Filter" HorizontalAlignment="Left" Height="32" Margin="384,27,0,0" VerticalAlignment="Top" Width="126" FontSize="14" Background="#FF3671D0" Foreground="White" FontWeight="Bold" />
+        <Button x:Name="backBtn" Command="{Binding BackToNurseWindow}" Content="Back" HorizontalAlignment="Left" Height="31" Margin="675,12,0,0" VerticalAlignment="Top" Width="108" FontSize="14" Background="#FFEA5454" Foreground="White" FontWeight="Bold" BorderBrush="#FFF96363"/>
+
+    </Grid>
+</Window>
